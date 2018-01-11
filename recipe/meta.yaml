@@ -1,4 +1,4 @@
-{% set version = '0.9.0' %}
+{% set version = '0.9.2' %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,7 +12,7 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/DiagrammeR_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/DiagrammeR/DiagrammeR_{{ version }}.tar.gz
-  sha256: 8f42964f6a52bfee601297cf03bef99d1568b672426d44d14c0b543ec6814626
+  sha256: dc9d24c5129b29688d1dd74438fe1fc5f02f3537a9a94cd26fd54f496468e63b
 
 build:
   number: 0
@@ -25,34 +25,46 @@ build:
 requirements:
   build:
     - r-base
-    - r-rcolorbrewer >=1.1_2
     - r-dplyr >=0.5.0
+    - r-downloader >=0.4
+    - r-htmltools >=0.3.6
     - r-htmlwidgets >=0.8
-    - r-igraph >=1.0.1
+    - r-igraph >=1.1.2
     - r-influencer >=0.1.0
     - r-magrittr >=1.5
-    - r-rgexf >=0.15.3
+    - r-purrr >=0.2.3
+    - r-rcolorbrewer >=1.1_2
+    - r-readr >=1.1.1
+    - r-rlang >=0.1.1
     - r-rstudioapi >=0.6
-    - r-scales >=0.4.1
-    - r-stringr >=1.1.0
-    - r-tibble >=1.2
-    - r-viridis >=0.3.4
-    - r-visnetwork >=1.0.2
+    - r-rgexf >=0.15.3
+    - r-scales >=0.5.0
+    - r-stringr >=1.2.0
+    - r-tibble >=1.3.3
+    - r-tidyr >=0.6.3
+    - r-viridis >=0.4.0
+    - r-visnetwork >=2.0.1
   run:
     - r-base
-    - r-rcolorbrewer >=1.1_2
     - r-dplyr >=0.5.0
+    - r-downloader >=0.4
+    - r-htmltools >=0.3.6
     - r-htmlwidgets >=0.8
-    - r-igraph >=1.0.1
+    - r-igraph >=1.1.2
     - r-influencer >=0.1.0
     - r-magrittr >=1.5
-    - r-rgexf >=0.15.3
+    - r-purrr >=0.2.3
+    - r-rcolorbrewer >=1.1_2
+    - r-readr >=1.1.1
+    - r-rlang >=0.1.1
     - r-rstudioapi >=0.6
-    - r-scales >=0.4.1
-    - r-stringr >=1.1.0
-    - r-tibble >=1.2
-    - r-viridis >=0.3.4
-    - r-visnetwork >=1.0.2
+    - r-rgexf >=0.15.3
+    - r-scales >=0.5.0
+    - r-stringr >=1.2.0
+    - r-tibble >=1.3.3
+    - r-tidyr >=0.6.3
+    - r-viridis >=0.4.0
+    - r-visnetwork >=2.0.1
 
 test:
   commands:
