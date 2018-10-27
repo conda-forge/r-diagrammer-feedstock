@@ -1,5 +1,4 @@
-{% set version = "1.0.0" %}
-
+{% set version = '1.0.0' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,74 +9,87 @@ package:
 source:
   fn: DiagrammeR_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/DiagrammeR_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/DiagrammeR/DiagrammeR_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/DiagrammeR_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/DiagrammeR/DiagrammeR_{{ version }}.tar.gz
   sha256: 2b186dae1b19018681b979e9444bf16559c42740d8382676fbaf3b0f8a44337e
 
 build:
-  number: 0
-  # r-igraph is not available for Windows
-  skip: true  # [win]
+  merge_build_host: True  # [win]
+  number: 1
+  skip: true  # [win32]
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
+    - {{posix}}zip               # [win]
+  host:
     - r-base
-    - r-dplyr >=0.5.0
+    - r-rcolorbrewer >=1.1_2
     - r-downloader >=0.4
+    - r-dplyr >=0.7.4
+    - r-glue >=1.2.0
     - r-htmltools >=0.3.6
     - r-htmlwidgets >=1.0
     - r-igraph >=1.1.2
     - r-influencer >=0.1.0
     - r-magrittr >=1.5
-    - r-purrr >=0.2.3
-    - r-rcolorbrewer >=1.1_2
+    - r-purrr >=0.2.4
     - r-readr >=1.1.1
-    - r-rlang >=0.1.1
-    - r-rstudioapi >=0.6
     - r-rgexf >=0.15.3
+    - r-rlang >=0.2.0
+    - r-rstudioapi >=0.7
     - r-scales >=0.5.0
-    - r-stringr >=1.2.0
-    - r-tibble >=1.3.3
-    - r-tidyr >=0.6.3
+    - r-stringr >=1.3.0
+    - r-tibble >=1.4.2
+    - r-tidyr >=0.8.0
     - r-viridis >=0.5.0
-    - r-visnetwork >=2.0.1
+    - r-visnetwork >=2.0.3
   run:
     - r-base
-    - r-dplyr >=0.5.0
+    - r-rcolorbrewer >=1.1_2
     - r-downloader >=0.4
+    - r-dplyr >=0.7.4
+    - r-glue >=1.2.0
     - r-htmltools >=0.3.6
     - r-htmlwidgets >=1.0
     - r-igraph >=1.1.2
     - r-influencer >=0.1.0
     - r-magrittr >=1.5
-    - r-purrr >=0.2.3
-    - r-rcolorbrewer >=1.1_2
+    - r-purrr >=0.2.4
     - r-readr >=1.1.1
-    - r-rlang >=0.1.1
-    - r-rstudioapi >=0.6
     - r-rgexf >=0.15.3
+    - r-rlang >=0.2.0
+    - r-rstudioapi >=0.7
     - r-scales >=0.5.0
-    - r-stringr >=1.2.0
-    - r-tibble >=1.3.3
-    - r-tidyr >=0.6.3
+    - r-stringr >=1.3.0
+    - r-tibble >=1.4.2
+    - r-tidyr >=0.8.0
     - r-viridis >=0.5.0
-    - r-visnetwork >=2.0.1
+    - r-visnetwork >=2.0.3
 
 test:
   commands:
-    - $R -e "library('DiagrammeR')"  # [not win]
+    - $R -e "library('DiagrammeR')"           # [not win]
     - "\"%R%\" -e \"library('DiagrammeR')\""  # [win]
 
 about:
   home: https://github.com/rich-iannone/DiagrammeR
   license: MIT
-  summary: Create graph diagrams and flowcharts using R.
+  summary: ' Build graph/network structures using functions for stepwise addition and deletion
+    of nodes and edges. Work with data available in tables for bulk addition of nodes,
+    edges, and associated metadata. Use graph selections and traversals to apply changes
+    to specific nodes or edges. A wide selection of graph algorithms allow for the analysis
+    of graphs. Visualize the graphs and take advantage of any aesthetic properties assigned
+    to nodes and edges.'
   license_family: MIT
 
 extra:
   recipe-maintainers:
     - johanneskoester
     - bgruening
+    - daler
+    - jdblischak
+    - cbrueffer
+    - dbast
