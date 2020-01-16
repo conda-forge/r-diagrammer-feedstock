@@ -1,4 +1,4 @@
-{% set version = '1.0.1' %}
+{% set version = "1.0.5" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/DiagrammeR_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/DiagrammeR/DiagrammeR_{{ version }}.tar.gz
-  sha256: ccee8acf608fc909e73c6de4374cef5a570cb62e5f454ac55dda736f22f3f013
+  sha256: 0877af707925b03c58a7e00cd84eb4e9906b551a61d86130ef4165477654e334
 
 build:
   merge_build_host: True  # [win]
-  number: 1
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -76,6 +76,7 @@ test:
 about:
   home: https://github.com/rich-iannone/DiagrammeR
   license: MIT
+  license_file: LICENSE
   summary: ' Build graph/network structures using functions for stepwise addition and deletion
     of nodes and edges. Work with data available in tables for bulk addition of nodes,
     edges, and associated metadata. Use graph selections and traversals to apply changes
