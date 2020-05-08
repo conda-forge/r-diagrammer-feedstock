@@ -1,4 +1,4 @@
-{% set version = "1.0.5" %}
+{% set version = "1.0.6.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/DiagrammeR_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/DiagrammeR/DiagrammeR_{{ version }}.tar.gz
-  sha256: 0877af707925b03c58a7e00cd84eb4e9906b551a61d86130ef4165477654e334
+  sha256: be4e4c520a3692902ce405e8225aef9f3d5f0cd11fcde614f6541e981b63673d
 
 build:
-  merge_build_host: True  # [win]
-  number: 1
+  merge_build_host: true  # [win]
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -77,12 +77,8 @@ about:
   home: https://github.com/rich-iannone/DiagrammeR
   license: MIT
   license_file: LICENSE
-  summary: ' Build graph/network structures using functions for stepwise addition and deletion
-    of nodes and edges. Work with data available in tables for bulk addition of nodes,
-    edges, and associated metadata. Use graph selections and traversals to apply changes
-    to specific nodes or edges. A wide selection of graph algorithms allow for the analysis
-    of graphs. Visualize the graphs and take advantage of any aesthetic properties assigned
-    to nodes and edges.'
+  summary: ' Build graph/network structures using functions for stepwise addition and deletion of nodes and edges. Work with data available in tables for bulk addition of nodes, edges, and associated metadata. Use graph selections and traversals to apply changes to specific nodes or edges. A wide selection of graph algorithms
+    allow for the analysis of graphs. Visualize the graphs and take advantage of any aesthetic properties assigned to nodes and edges.'
   license_family: MIT
 
 extra:
