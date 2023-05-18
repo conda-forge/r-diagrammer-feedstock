@@ -1,11 +1,11 @@
-About r-diagrammer
-==================
+About r-diagrammer-feedstock
+============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-diagrammer-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/rich-iannone/DiagrammeR
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-diagrammer-feedstock/blob/main/LICENSE.txt)
 
 Summary:  Build graph/network structures using functions for stepwise addition and deletion of nodes and edges. Work with data available in tables for bulk addition of nodes, edges, and associated metadata. Use graph selections and traversals to apply changes to specific nodes or edges. A wide selection of graph algorithms allow for the analysis of graphs. Visualize the graphs and take advantage of any aesthetic properties assigned to nodes and edges.
 
