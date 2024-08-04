@@ -1,6 +1,5 @@
 {% set version = "1.0.11" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-diagrammer
@@ -13,8 +12,7 @@ source:
   sha256: e873e3d6e198232408161661001ddcb04c9a56065bb4703c925e538462f4c4df
 
 build:
-  merge_build_host: true  # [win]
-  number: 0
+  number: 1
   noarch: generic
   rpaths:
     - lib/R/lib/
